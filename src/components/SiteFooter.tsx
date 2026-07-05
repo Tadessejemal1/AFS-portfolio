@@ -61,7 +61,7 @@ export function SiteFooter() {
             </div>
           </div>
 
-          <div className="foot-links-col">
+          <div className="foot-links-col foot-col-company">
             <h5>{t("foot.company")}</h5>
             <ul>
               <li><Link to="/about">{t("foot.link.about")}</Link></li>
@@ -70,7 +70,7 @@ export function SiteFooter() {
             </ul>
           </div>
 
-          <div className="foot-links-col">
+          <div className="foot-links-col foot-col-experience">
             <h5>Experience AFS</h5>
             <ul>
               <li><Link to="/facilities">Workshops & Facilities</Link></li>
@@ -79,7 +79,7 @@ export function SiteFooter() {
             </ul>
           </div>
 
-          <div className="foot-links-col">
+          <div className="foot-links-col foot-col-services">
             <h5>{t("foot.services")}</h5>
             <ul>
               <li><Link to="/services">{t("foot.link.fleet")}</Link></li>
