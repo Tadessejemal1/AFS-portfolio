@@ -439,6 +439,7 @@ body.corporate-theme .section.off {
   grid-template-columns: repeat(5, 1fr);
   gap: 16px;
   margin-top: 40px;
+  width: 100%;
 }
 
 .corp-pillar-card {
@@ -448,6 +449,8 @@ body.corporate-theme .section.off {
   padding: 28px 22px;
   display: flex;
   flex-direction: column;
+  align-items: center;
+  text-align: center;
   gap: 12px;
   transition: box-shadow 0.25s, border-color 0.25s, transform 0.25s;
 }
@@ -577,6 +580,26 @@ body.corporate-theme .partner-tile-label {
   font-size: 11px;
   font-weight: 600;
   letter-spacing: 0.06em;
+}
+
+body.corporate-theme .trusted-marquee {
+  overflow: hidden;
+  padding: 12px 0 20px;
+  -webkit-mask-image: linear-gradient(to right, transparent, black 6%, black 94%, transparent);
+  mask-image: linear-gradient(to right, transparent, black 6%, black 94%, transparent);
+}
+
+body.corporate-theme .trusted-track {
+  display: flex;
+  gap: 18px;
+  width: max-content;
+  align-items: center;
+  animation: afs-marquee 40s linear infinite;
+  will-change: transform;
+}
+
+body.corporate-theme .trusted-marquee:hover .trusted-track {
+  animation-play-state: paused;
 }
 
 /* ---------- SOLUTIONS GRID ---------- */
@@ -1461,9 +1484,29 @@ body.corporate-theme .row-item p {
 
 /* Client marquee */
 body.corporate-theme .client-marquee {
+  overflow: hidden;
   background: var(--white);
   border-color: var(--line);
   padding: 32px 0;
+  -webkit-mask-image: linear-gradient(to right, transparent, black 6%, black 94%, transparent);
+  mask-image: linear-gradient(to right, transparent, black 6%, black 94%, transparent);
+}
+
+body.corporate-theme .client-track {
+  display: flex;
+  gap: 24px;
+  width: max-content;
+  align-items: center;
+  animation: afs-marquee 50s linear infinite;
+  will-change: transform;
+}
+
+body.corporate-theme .client-track.reverse {
+  animation-direction: reverse;
+}
+
+body.corporate-theme .client-marquee:hover .client-track {
+  animation-play-state: paused;
 }
 
 body.corporate-theme .client-tile {

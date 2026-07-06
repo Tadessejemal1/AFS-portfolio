@@ -22,20 +22,7 @@ export function TrustedPartners({ label, items, id = "trusted" }: TrustedPartner
         <p className="trusted-sub">{items.length} institutional sectors · one standard of excellence</p>
       </div>
 
-      <div className="wrap partner-grid" role="list">
-        {items.map((partner) => (
-          <article className="partner-tile" role="listitem" key={partner.key}>
-            <div className="partner-tile-logo">
-              <img src={partner.logo} alt={partner.alt} loading="lazy" />
-            </div>
-            <span className="partner-tile-label">{partner.label}</span>
-          </article>
-        ))}
-      </div>
-
-      <div className="partner-marquee-wrap" aria-hidden>
-        <Marquee variant="trusted" items={items} />
-      </div>
+      <Marquee variant="trusted" items={items} />
     </section>
   );
 }

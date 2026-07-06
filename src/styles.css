@@ -630,7 +630,7 @@ footer.site-footer{border-top:1px solid var(--line); background:#FFFFFF;}
    Client logo marquee — styled as monochrome logo tiles
    ================================================================ */
 .client-marquee{
-  overflow-x:auto; overflow-y:hidden; position:relative;
+  overflow:hidden; position:relative;
   border-top:1px solid var(--line); border-bottom:1px solid var(--line);
   background:var(--white); padding:44px 0;
   -webkit-overflow-scrolling:touch;
@@ -2535,8 +2535,8 @@ body.dark .kpi b{
 }
 .partner-tile:hover .partner-tile-label{color:var(--blue-dk);}
 
-/* Mobile partner marquee */
-.partner-marquee-wrap{display:none;}
+/* Partner marquee — auto-scroll on all screen sizes */
+.partner-marquee-wrap{display:block;}
 .trusted-marquee{padding:8px 0 4px;}
 .trusted-track{gap:18px; padding-inline:18px;}
 .partner-tile--marquee{
@@ -2548,7 +2548,6 @@ body.dark .kpi b{
 
 @media (max-width:1100px){
   .partner-grid{display:none;}
-  .partner-marquee-wrap{display:block;}
 }
 
 /* Teaser cards — premium grid */
