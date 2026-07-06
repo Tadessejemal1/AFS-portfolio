@@ -1,0 +1,12 @@
+[build]
+  command = "npm run build:netlify"
+  publish = ".output/public"
+
+[build.environment]
+  NODE_VERSION = "22"
+
+# Client-side navigation fallback for paths without a prerendered file
+[[redirects]]
+  from = "/*"
+  to = "/index.html"
+  status = 200
