@@ -1,5 +1,7 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { Marquee } from "@/components/Marquee";
+import { PageHero } from "@/components/PageHero";
+import { CLIENT_COUNT, CLIENT_INSTITUTIONS } from "@/lib/client-institutions";
 import { useSite } from "@/lib/site-context";
 
 export const Route = createFileRoute("/clients")({
@@ -14,16 +16,14 @@ export const Route = createFileRoute("/clients")({
   component: ClientsPage,
 });
 
-const clients = [
-  "UNDP", "UNICEF", "WHO", "FAO", "WFP",
-  "ILO", "UN-AIDS", "UN/ECA", "UNOAU", "Canada Embassy",
-  "Concern Ethiopia", "ACF", "ACDI/VOCA", "DFID", "SC Canada",
-  "Africa Insurance", "Nyala Insurance", "Oromia Insurance", "United Insurance", "Nib Insurance",
-];
+const clientItems = CLIENT_INSTITUTIONS.map((c) => ({
+  name: c.name,
+  logo: c.logo,
+  alt: c.name,
+}));
 
-// Split into two rows scrolling in opposite directions for a fuller look.
-const rowA = clients.filter((_, i) => i % 2 === 0);
-const rowB = clients.filter((_, i) => i % 2 === 1);
+const rowA = clientItems.filter((_, i) => i % 2 === 0);
+const rowB = clientItems.filter((_, i) => i % 2 === 1);
 
 const SVC_NUMS = ["01", "02", "03", "04", "05", "06", "07", "08"] as const;
 
@@ -31,23 +31,23 @@ function ClientsPage() {
   const { t } = useSite();
   return (
     <>
-      <section className="page-hero">
-        <div className="wrap hero-content">
-          <div className="label">{t("cli.hero.label")}</div>
-          <h1>{t("cli.hero.h1a")} <b>{t("cli.hero.h1b")}</b></h1>
-        </div>
-      </section>
+      <PageHero
+        labelKey="cli.hero.label"
+        h1aKey="cli.hero.h1a"
+        h1bKey="cli.hero.h1b"
+      />
 
-      <section className="section" style={{ paddingTop: 96, paddingBottom: 96 }}>
-        <div className="wrap" style={{ marginBottom: 40 }}>
+      <section className="section corp-clients-section">
+        <div className="wrap corp-clients-head">
           <span className="label blue">{t("cli.trust.label")}</span>
-          <h2 className="content-title" style={{ marginTop: 12, marginBottom: 0 }}>
+          <h2 className="content-title">
             {t("cli.trust.h2a")} <b>{t("cli.trust.h2b")}</b>
           </h2>
+          <p className="client-count-note">{CLIENT_COUNT}+ {t("cli.trust.count")}</p>
         </div>
 
         <Marquee items={rowA} />
-        <div style={{ height: 20 }} />
+        <div className="corp-marquee-gap" />
         <Marquee items={rowB} reverse />
 
         <div className="wrap">

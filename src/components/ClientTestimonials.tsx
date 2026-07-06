@@ -79,7 +79,7 @@ export function ClientTestimonials() {
   const scrollTo = useCallback((index: number) => emblaApi?.scrollTo(index), [emblaApi]);
 
   return (
-    <section className="section off testimonials-section">
+    <section className="section off testimonials-section" id="stories">
       <div className="wrap testimonials-head">
         <span className="label blue">{t("home.quotes.label")}</span>
         <h2 className="content-title testimonials-title">

@@ -1,4 +1,5 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
+import { PageHero } from "@/components/PageHero";
 import { img } from "@/lib/afs-images";
 import { useSite } from "@/lib/site-context";
 
@@ -34,13 +35,12 @@ function IndustriesPage() {
   const { t } = useSite();
   return (
     <>
-      <section className="page-hero">
-        <div className="wrap hero-content">
-          <div className="label">{t("ind.hero.label")}</div>
-          <h1>{t("ind.hero.h1a")} <b>{t("ind.hero.h1b")}</b></h1>
-          <p className="lead">{t("ind.hero.lead")}</p>
-        </div>
-      </section>
+      <PageHero
+        labelKey="ind.hero.label"
+        h1aKey="ind.hero.h1a"
+        h1bKey="ind.hero.h1b"
+        leadKey="ind.hero.lead"
+      />
 
       <section className="sector-index">
         <div className="wrap sector-index-grid">

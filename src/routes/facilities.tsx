@@ -1,4 +1,5 @@
 import { createFileRoute } from "@tanstack/react-router";
+import { PageHero } from "@/components/PageHero";
 import { img } from "@/lib/afs-images";
 import { useSite } from "@/lib/site-context";
 
@@ -21,17 +22,16 @@ function FacilitiesPage() {
   const { t } = useSite();
   return (
     <>
-      <section className="page-hero">
-        <div className="wrap hero-content">
-          <div className="label">{t("fac.hero.label")}</div>
-          <h1>{t("fac.hero.h1a")} <b>{t("fac.hero.h1b")}</b></h1>
-          <p className="lead">{t("fac.hero.lead")}</p>
-        </div>
-      </section>
+      <PageHero
+        labelKey="fac.hero.label"
+        h1aKey="fac.hero.h1a"
+        h1bKey="fac.hero.h1b"
+        leadKey="fac.hero.lead"
+      />
 
       <section className="section off">
         <div className="wrap">
-          <h2 style={{ fontSize: "clamp(28px,3vw,42px)", marginBottom: 40 }}>{t("fac.show.h2a")} <b>{t("fac.show.h2b")}</b></h2>
+          <h2 className="corp-section-title">{t("fac.show.h2a")} <b>{t("fac.show.h2b")}</b></h2>
           <div className="fac-grid">
             {facImgs.map((src, i) => (
               <div key={i} className="fac-img"><img src={src} alt="Facility" loading="lazy" /></div>
@@ -42,7 +42,7 @@ function FacilitiesPage() {
 
       <section className="section">
         <div className="wrap">
-          <h2 style={{ fontSize: "clamp(28px,3vw,42px)", marginBottom: 40 }}>{t("fac.eq.h2a")} <b>{t("fac.eq.h2b")}</b></h2>
+          <h2 className="corp-section-title">{t("fac.eq.h2a")} <b>{t("fac.eq.h2b")}</b></h2>
           <div className="row-list">
             {EQ.map((n) => (
               <div key={n} className="row-item">

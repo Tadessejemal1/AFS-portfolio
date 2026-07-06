@@ -1,4 +1,5 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
+import { PageHero } from "@/components/PageHero";
 import { img } from "@/lib/afs-images";
 import { useSite } from "@/lib/site-context";
 
@@ -27,12 +28,11 @@ function ServicesPage() {
   const { t } = useSite();
   return (
     <>
-      <section className="page-hero">
-        <div className="wrap hero-content">
-          <div className="label">{t("services.hero.label")}</div>
-          <h1>{t("services.hero.h1a")} <b>{t("services.hero.h1b")}</b></h1>
-        </div>
-      </section>
+      <PageHero
+        labelKey="services.hero.label"
+        h1aKey="services.hero.h1a"
+        h1bKey="services.hero.h1b"
+      />
 
       {ROWS.map((r, i) => {
         const label = t(`services.${r.k}.label`);

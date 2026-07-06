@@ -1,4 +1,5 @@
 import { createFileRoute } from "@tanstack/react-router";
+import { PageHero } from "@/components/PageHero";
 import { useSite } from "@/lib/site-context";
 
 export const Route = createFileRoute("/sustainability")({
@@ -19,12 +20,12 @@ function SustainabilityPage() {
   const { t } = useSite();
   return (
     <>
-      <section className="page-hero">
-        <div className="wrap hero-content">
-          <div className="label">{t("sus.hero.label")}</div>
-          <h1>{t("sus.hero.h1a")} <b>{t("sus.hero.h1b")}</b></h1>
-        </div>
-      </section>
+      <PageHero
+        labelKey="sus.hero.label"
+        h1aKey="sus.hero.h1a"
+        h1bKey="sus.hero.h1b"
+      />
+
       <section className="section">
         <div className="wrap">
           <div className="row-list">

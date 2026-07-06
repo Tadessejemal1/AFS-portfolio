@@ -83,7 +83,7 @@ export function SiteHeader() {
 
   return (
     <>
-      <header className={`site-header${scrolled ? " scrolled" : ""}`}>
+      <header className={`site-header site-header--corp${scrolled ? " scrolled" : ""}`}>
         <div className="wrap hdr-inner">
           <Link to="/" className="logo">
             <img src={afsLogo} alt="AFS International" className="logo-img" />

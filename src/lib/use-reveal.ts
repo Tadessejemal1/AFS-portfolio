@@ -25,6 +25,19 @@ const SELECTORS = [
   ".page-hero .lead",
   ".fleet-card",
   ".fleet-cap-head",
+  ".partner-tile",
+  ".trusted-head",
+  ".demo-copy",
+  ".demo-card",
+  ".corp-pillar-card",
+  ".corp-solution-card",
+  ".corp-industry-card",
+  ".corp-hero-copy",
+  ".corp-product-copy",
+  ".page-hero .hero-content",
+  ".sector-article",
+  ".ind-card",
+  ".row-item",
 ].join(",");
 
 export function useReveal() {

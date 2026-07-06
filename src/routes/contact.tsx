@@ -3,6 +3,7 @@ import { useState, type FormEvent } from "react";
 import { z } from "zod";
 import { useSite } from "@/lib/site-context";
 import { InspectionScheduler, type SchedulerValue } from "@/components/InspectionScheduler";
+import { PageHero } from "@/components/PageHero";
 
 
 export const Route = createFileRoute("/contact")({
@@ -84,20 +85,21 @@ function ContactPage() {
 
   return (
     <>
-      <section className="page-hero contact-hero">
-        <div className="wrap hero-content">
-          <div className="label">{t("con.hero.label")}</div>
-          <h1>{t("con.hero.h1a")} <b><i>{t("con.hero.h1b")}</i></b></h1>
-          <p className="lead">{t("con.hero.lead")}</p>
-          <div className="hero-meta">
-            <span><em>24/7</em> Emergency Response</span>
-            <span className="dot" aria-hidden />
-            <span><em>≤ 1</em> Business Day Reply</span>
-            <span className="dot" aria-hidden />
-            <span><em>Priority</em> Fleet Scheduling</span>
-          </div>
+      <PageHero
+        labelKey="con.hero.label"
+        h1aKey="con.hero.h1a"
+        h1bKey="con.hero.h1b"
+        leadKey="con.hero.lead"
+        variant="contact"
+      >
+        <div className="hero-meta">
+          <span><em>24/7</em> Emergency Response</span>
+          <span className="dot" aria-hidden />
+          <span><em>≤ 1</em> Business Day Reply</span>
+          <span className="dot" aria-hidden />
+          <span><em>Priority</em> Fleet Scheduling</span>
         </div>
-      </section>
+      </PageHero>
 
       <section className="section contact-section">
         <div className="wrap contact-grid-premium">

@@ -1,4 +1,5 @@
 import { createFileRoute } from "@tanstack/react-router";
+import { PageHero } from "@/components/PageHero";
 import { img } from "@/lib/afs-images";
 import { useSite } from "@/lib/site-context";
 import organogram from "@/assets/afs-organogram.jpg";
@@ -21,12 +22,11 @@ function AboutPage() {
   const { t } = useSite();
   return (
     <>
-      <section className="page-hero">
-        <div className="wrap hero-content">
-          <div className="label">{t("about.hero.label")}</div>
-          <h1>{t("about.hero.h1a")} <b>{t("about.hero.h1b")}</b></h1>
-        </div>
-      </section>
+      <PageHero
+        labelKey="about.hero.label"
+        h1aKey="about.hero.h1a"
+        h1bKey="about.hero.h1b"
+      />
 
       <section className="section">
         <div className="wrap two-col">
@@ -39,18 +39,18 @@ function AboutPage() {
           </div>
           <div>
             <span className="label blue">{t("about.mvv.mission")}</span>
-            <p style={{ color: "var(--ink)", fontSize: 16, marginBottom: 28 }}>{t("about.mvv.missionP")}</p>
+            <p className="corp-lead-text">{t("about.mvv.missionP")}</p>
             <span className="label blue">{t("about.mvv.vision")}</span>
-            <p style={{ color: "var(--ink)", fontSize: 16, marginBottom: 28 }}>{t("about.mvv.visionP")}</p>
+            <p className="corp-lead-text">{t("about.mvv.visionP")}</p>
             <span className="label blue">{t("about.mvv.values")}</span>
-            <p style={{ fontSize: 14.5 }}>{t("about.mvv.valuesP")}</p>
+            <p>{t("about.mvv.valuesP")}</p>
           </div>
         </div>
       </section>
 
       <section className="section off">
         <div className="wrap">
-          <h2 style={{ fontSize: "clamp(28px,3vw,42px)", marginBottom: 40 }}>{t("about.time.h2a")} <b>{t("about.time.h2b")}</b></h2>
+          <h2 className="corp-section-title">{t("about.time.h2a")} <b>{t("about.time.h2b")}</b></h2>
           <div className="timeline">
             <div className="t-row"><div className="yr">1999</div><div><h4>{t("about.time.r1.t")}</h4><p>{t("about.time.r1.d")}</p></div></div>
             <div className="t-row"><div className="yr">{t("about.time.r2.y")}</div><div><h4>{t("about.time.r2.t")}</h4><p>{t("about.time.r2.d")}</p></div></div>
@@ -61,14 +61,14 @@ function AboutPage() {
 
       <section className="section">
         <div className="wrap">
-          <h2 style={{ fontSize: "clamp(28px,3vw,42px)", marginBottom: 40 }}>{t("about.lead.h2")}</h2>
+          <h2 className="corp-section-title">{t("about.lead.h2")}</h2>
           <div className="two-col">
-            <div className="media-img" style={{ aspectRatio: "3/4" }}>
+            <div className="media-img corp-leader-img">
               <img src={img.leader} alt={t("about.lead.name")} loading="lazy" />
             </div>
-            <div style={{ paddingTop: 32 }}>
+            <div className="corp-leader-copy">
               <span className="label blue">{t("about.lead.label")}</span>
-              <h3 style={{ fontSize: 30, margin: "12px 0 16px" }}>{t("about.lead.name")}</h3>
+              <h3>{t("about.lead.name")}</h3>
               <p>{t("about.lead.p")}</p>
             </div>
           </div>
@@ -96,9 +96,9 @@ function AboutPage() {
 
       <section className="section">
         <div className="wrap">
-          <div className="sec-head" style={{ marginBottom: 32 }}>
+          <div className="sec-head corp-sec-head">
             <span className="label blue">Organization</span>
-            <h2 style={{ fontSize: "clamp(28px,3vw,42px)" }}>Our <b>Organogram</b></h2>
+            <h2 className="corp-section-title">Our <b>Organogram</b></h2>
             <p>A clear structure supporting excellence across technical, commercial and support functions — updated February 2026.</p>
           </div>
           <figure className="organogram">
